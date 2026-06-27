@@ -1,0 +1,421 @@
+/* ====================================
+   LogHawk – Dashboard Page Styles
+   ==================================== */
+
+.dashboard-page {
+  animation: fadeIn 0.4s ease;
+  max-width: 1400px;
+}
+
+/* ---- Welcome Banner ---- */
+.welcome-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle accent line on top */
+.welcome-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-accent), #00ccff, transparent);
+}
+
+.welcome-text {
+  min-width: 0;
+}
+
+.welcome-greeting {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1.3;
+  /* Override the global h1 size */
+  font-size: 1.25rem !important;
+}
+
+.welcome-date {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  margin-top: 0.25rem;
+}
+
+.welcome-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.live-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-success);
+  box-shadow: 0 0 6px rgba(16, 185, 129, 0.5);
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* ---- Stats Grid ---- */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ---- Main Two-Column Grid ---- */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.dashboard-section {
+  padding: 1.25rem;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.section-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* ---- Alerts List ---- */
+.alerts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.alert-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-tertiary);
+  transition: background var(--transition-fast);
+  cursor: pointer;
+}
+
+.alert-row:hover {
+  background: var(--color-bg-elevated);
+}
+
+.alert-severity-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.severity-dot-critical { background: var(--color-danger);  box-shadow: 0 0 6px rgba(255, 77, 77, 0.5); }
+.severity-dot-high     { background: #F97316;              box-shadow: 0 0 6px rgba(249, 115, 22, 0.5); }
+.severity-dot-medium   { background: var(--color-warning); }
+.severity-dot-low      { background: var(--color-info); }
+
+.alert-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.alert-title {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.alert-meta {
+  display: block;
+  font-size: 0.6875rem;
+  color: var(--color-text-muted);
+  margin-top: 0.125rem;
+}
+
+.alert-badge {
+  font-size: 0.5625rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+  letter-spacing: 0.04em;
+}
+
+/* ---- Quick Actions ---- */
+.quick-actions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.quick-action-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 0.75rem;
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-family: var(--font-sans);
+}
+
+.quick-action-btn:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background: rgba(0, 255, 157, 0.05);
+  transform: translateY(-1px);
+}
+
+.qa-icon {
+  font-size: 1.375rem;
+  line-height: 1;
+}
+
+.qa-label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+}
+
+/* ---- Threat Overview ---- */
+.threat-overview-badge {
+  font-size: 0.625rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  background: rgba(0, 255, 157, 0.08);
+  color: var(--color-accent);
+  border: 1px solid rgba(0, 255, 157, 0.15);
+  letter-spacing: 0.04em;
+}
+
+.threat-overview-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.threat-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.threat-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.threat-label {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+}
+
+.threat-count {
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.threat-bar-track {
+  height: 5px;
+  background: var(--color-bg-primary);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.threat-bar {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 1s ease;
+  opacity: 0.85;
+}
+
+.threat-overview-note {
+  font-size: 0.6875rem;
+  color: var(--color-text-muted);
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--color-border);
+}
+
+/* ---- System Health ---- */
+.health-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.health-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.health-label {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  width: 110px;
+  flex-shrink: 0;
+}
+
+.health-bar-track {
+  flex: 1;
+  height: 6px;
+  background: var(--color-bg-primary);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.health-bar {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 1s ease;
+}
+
+.health-bar-good    { background: linear-gradient(90deg, var(--color-success), var(--color-accent)); }
+.health-bar-warning { background: linear-gradient(90deg, var(--color-warning), #FF9800); }
+.health-bar-danger  { background: linear-gradient(90deg, var(--color-danger), #ff8080); }
+
+.health-value {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  width: 36px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.dashboard-sidebar-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+@media (max-width: 1400px) {
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .welcome-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ---- Empty States ---- */
+.empty-alerts-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+.shield-ok-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-success);
+  opacity: 0.8;
+}
+
+.empty-alerts-placeholder p {
+  font-size: 0.8125rem;
+}
+
+.empty-threats-note {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+/* ---- Incident Response Summary Widget ---- */
+.incident-summary-widget {
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5rem 0;
+  text-align: center;
+}
+
+.incident-summary-metric {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.incident-summary-metric .metric-value {
+  font-size: 1.75rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.incident-summary-metric .metric-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+

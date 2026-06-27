@@ -1,0 +1,213 @@
+/* ====================================
+   LogHawk – Log Upload Component Styles
+   ==================================== */
+
+.upload-section {
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.upload-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.upload-hint {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+/* ---- Drop Zone ---- */
+.drop-zone {
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 2.5rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  background: var(--color-bg-tertiary);
+  min-height: 140px;
+  text-align: center;
+}
+
+.drop-zone:hover {
+  border-color: var(--color-accent);
+  background: rgba(0, 255, 157, 0.03);
+}
+
+.drop-zone-active {
+  border-color: var(--color-accent);
+  background: rgba(0, 255, 157, 0.06);
+  box-shadow: 0 0 0 4px rgba(0, 255, 157, 0.1);
+}
+
+.drop-zone-has-file {
+  cursor: default;
+  border-style: solid;
+  border-color: var(--color-border-hover);
+}
+
+.drop-zone-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.drop-zone-icon {
+  font-size: 2.5rem;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.drop-zone-primary {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.drop-zone-secondary {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+/* ---- File selected state ---- */
+.drop-zone-file {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 480px;
+}
+
+.file-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.file-info {
+  flex: 1;
+  text-align: left;
+  min-width: 0;
+}
+
+.file-name {
+  display: block;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.file-size {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  margin-top: 0.125rem;
+}
+
+.file-clear-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.file-clear-btn:hover {
+  background: rgba(255, 77, 77, 0.15);
+  border-color: var(--color-danger);
+  color: var(--color-danger);
+}
+
+/* ---- Controls ---- */
+.upload-controls {
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.log-type-field {
+  flex: 1;
+  min-width: 200px;
+}
+
+.log-type-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.375rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.upload-btn {
+  white-space: nowrap;
+  padding: 0.75rem 1.5rem;
+}
+
+.upload-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* ---- Progress Bar ---- */
+.progress-track {
+  height: 4px;
+  background: var(--color-bg-primary);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin-top: 0.875rem;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-accent), #00ccff);
+  border-radius: var(--radius-full);
+  transition: width 0.2s ease;
+}
+
+/* ---- Alerts ---- */
+.upload-alert {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8125rem;
+  margin-top: 0.875rem;
+  font-weight: 500;
+}
+
+.upload-alert-success {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  color: var(--color-success);
+}
+
+.upload-alert-error {
+  background: rgba(255, 77, 77, 0.1);
+  border: 1px solid rgba(255, 77, 77, 0.25);
+  color: var(--color-danger);
+}

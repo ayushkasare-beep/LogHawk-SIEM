@@ -1,0 +1,3 @@
+"""
+LogHawk – Detectors Package
+"""

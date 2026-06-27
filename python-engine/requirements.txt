@@ -1,0 +1,9 @@
+# ====================================
+# LogHawk Python Engine – Dependencies
+# ====================================
+# Install with: pip install -r requirements.txt
+#
+# Note: The core detection engine uses only the Python standard library
+# (re, json, argparse, datetime, collections) plus python-dateutil.
+
+python-dateutil>=2.8.0

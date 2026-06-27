@@ -1,0 +1,92 @@
+/* ====================================
+   LogHawk – StatCard Styles
+   ==================================== */
+
+.stat-card {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  transition: all var(--transition-base);
+  animation: fadeIn 0.5s ease forwards;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+
+.stat-card:hover {
+  border-color: var(--color-border-hover);
+  box-shadow: var(--shadow-elevated);
+  transform: translateY(-2px);
+}
+
+/* Severity Variants */
+.stat-accent::before { background: linear-gradient(90deg, var(--color-accent), #00ccff); }
+.stat-critical::before { background: linear-gradient(90deg, var(--color-danger), #ff8080); }
+.stat-high::before { background: linear-gradient(90deg, #F97316, #FBBF24); }
+.stat-medium::before { background: linear-gradient(90deg, var(--color-warning), #FFE066); }
+.stat-low::before { background: linear-gradient(90deg, var(--color-info), #93C5FD); }
+
+.stat-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.stat-icon {
+  font-size: 1.25rem;
+}
+
+.stat-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.stat-body {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-trend {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+
+.trend-up {
+  color: var(--color-danger);
+  background: rgba(255, 77, 77, 0.1);
+}
+
+.trend-down {
+  color: var(--color-success);
+  background: rgba(16, 185, 129, 0.1);
+}
+
+.trend-neutral {
+  color: var(--color-text-muted);
+  background: var(--color-bg-tertiary);
+}

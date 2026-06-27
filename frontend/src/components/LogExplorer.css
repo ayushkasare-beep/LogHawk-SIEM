@@ -1,0 +1,355 @@
+/* ====================================
+   LogHawk – Log Explorer Component Styles
+   ==================================== */
+
+.log-explorer {
+  padding: 1.5rem;
+}
+
+/* ---- Header ---- */
+.explorer-header {
+  margin-bottom: 1.25rem;
+}
+
+.explorer-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.explorer-total-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  background: rgba(0, 255, 157, 0.08);
+  border: 1px solid rgba(0, 255, 157, 0.15);
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+}
+
+/* ---- Search ---- */
+.explorer-search-row {
+  margin-bottom: 0.75rem;
+}
+
+.explorer-search-box {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 0.875rem;
+  transition: all var(--transition-fast);
+}
+
+.explorer-search-box:focus-within {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(0, 255, 157, 0.08);
+}
+
+.search-icon-sm {
+  width: 15px;
+  height: 15px;
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+.explorer-search-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--color-text-primary);
+  font-size: 0.8125rem;
+  width: 100%;
+  padding: 0;
+  box-shadow: none;
+}
+
+.explorer-search-input:focus {
+  box-shadow: none;
+  border-color: transparent;
+}
+
+.search-clear-btn {
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  font-size: 0.75rem;
+  padding: 2px 4px;
+  flex-shrink: 0;
+  transition: color var(--transition-fast);
+}
+
+.search-clear-btn:hover {
+  color: var(--color-danger);
+}
+
+/* ---- Filters ---- */
+.explorer-filters {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  flex-wrap: wrap;
+}
+
+.filter-select {
+  padding: 0.4rem 0.75rem;
+  font-size: 0.8125rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  min-width: 140px;
+  width: auto;
+}
+
+.filter-select:focus {
+  box-shadow: 0 0 0 2px rgba(0, 255, 157, 0.08);
+}
+
+.filter-clear-btn {
+  padding: 0.35rem 0.75rem;
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+.filter-spacer {
+  flex: 1;
+}
+
+.refresh-btn {
+  padding: 0.35rem 0.875rem;
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+/* ---- Empty / Loading States ---- */
+.explorer-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  text-align: center;
+  gap: 0.375rem;
+}
+
+.state-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.explorer-state p {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+.state-hint {
+  font-size: 0.8125rem !important;
+  color: var(--color-text-muted) !important;
+}
+
+/* ---- Table ---- */
+.explorer-table-wrapper {
+  overflow-x: auto;
+}
+
+.explorer-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8125rem;
+}
+
+.explorer-table thead th {
+  text-align: left;
+  padding: 0.625rem 0.875rem;
+  color: var(--color-text-muted);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--color-border);
+  white-space: nowrap;
+}
+
+.explorer-table tbody .log-row {
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.explorer-table tbody .log-row:hover td {
+  background: var(--color-bg-tertiary);
+}
+
+.explorer-table tbody .log-row-expanded td {
+  background: rgba(0, 255, 157, 0.03);
+}
+
+.explorer-table tbody tr:not(.raw-log-row):not(:last-child) td {
+  border-bottom: 1px solid rgba(30, 41, 59, 0.5);
+}
+
+.explorer-table td {
+  padding: 0.75rem 0.875rem;
+  color: var(--color-text-secondary);
+  vertical-align: middle;
+}
+
+/* ---- Column-specific styles ---- */
+.col-timestamp {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  white-space: nowrap;
+  color: var(--color-text-muted) !important;
+}
+
+.col-username {
+  font-weight: 600;
+  color: var(--color-text-primary) !important;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+}
+
+.col-ip {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--color-info) !important;
+}
+
+.col-source {
+  max-width: 120px;
+}
+
+.source-file-name {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+.null-value {
+  color: var(--color-text-muted);
+  font-weight: 400;
+}
+
+/* Event Type Chip */
+.event-type-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Status Chip */
+.status-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* ---- Raw Log Expansion ---- */
+.raw-log-row td {
+  padding: 0 0.875rem 0.75rem !important;
+  background: var(--color-bg-primary) !important;
+  border-bottom: 1px solid var(--color-border) !important;
+}
+
+.raw-log-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  padding: 0.75rem 1rem;
+  background: rgba(11, 17, 32, 0.6);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--color-accent);
+}
+
+.raw-log-label {
+  font-size: 0.625rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.raw-log-text {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  word-break: break-all;
+  white-space: pre-wrap;
+  line-height: 1.6;
+}
+
+/* ---- Pagination ---- */
+.explorer-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  margin-top: 0.75rem;
+  border-top: 1px solid var(--color-border);
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.pagination-info {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.page-btn {
+  min-width: 32px;
+  height: 32px;
+  padding: 0 0.5rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-family: var(--font-sans);
+  white-space: nowrap;
+}
+
+.page-btn:hover:not(:disabled) {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.page-btn-active {
+  background: rgba(0, 255, 157, 0.1);
+  border-color: rgba(0, 255, 157, 0.3);
+  color: var(--color-accent);
+}
+
+.page-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}

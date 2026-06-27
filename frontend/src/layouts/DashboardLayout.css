@@ -1,0 +1,42 @@
+/* ====================================
+   LogHawk – Dashboard Layout Styles
+   ==================================== */
+
+.dashboard-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.dashboard-content {
+  flex: 1;
+  padding: 1.5rem;
+  overflow-y: auto;
+  max-height: calc(100vh - 64px);
+  background: var(--color-bg-primary);
+  /* Smooth transition when sidebar collapses */
+  transition: margin-left var(--transition-base);
+}
+
+/* Mobile overlay — shown when sidebar is open on small screens */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 90;
+  backdrop-filter: blur(2px);
+}
+
+/* ---- Mobile Breakpoint ---- */
+@media (max-width: 768px) {
+  .dashboard-content {
+    padding: 1rem;
+  }
+}

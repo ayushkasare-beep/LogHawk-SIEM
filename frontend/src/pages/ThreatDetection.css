@@ -1,0 +1,268 @@
+/* ====================================
+   LogHawk – Threat Detection styling
+   ==================================== */
+
+.detection-page {
+  padding: 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.detection-header {
+  margin-bottom: 2rem;
+}
+
+.detection-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.detection-desc {
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+}
+
+/* Rules Overview Stats Row */
+.rules-stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.rules-stat-card {
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.rules-stat-icon {
+  font-size: 1.75rem;
+  opacity: 0.85;
+}
+
+.rules-stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.rules-stat-label {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+}
+
+/* Rules Grid */
+.rules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.rule-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  height: 100%;
+}
+
+.rule-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  gap: 0.75rem;
+}
+
+.rule-tactic {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-accent);
+  background: rgba(0, 255, 157, 0.08);
+  border: 1px solid rgba(0, 255, 157, 0.2);
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+}
+
+.rule-severity-badge {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.rule-name-row {
+  margin-bottom: 0.75rem;
+}
+
+.rule-name {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.rule-desc {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+/* Rule logic meta */
+.rule-meta-section {
+  border-top: 1px solid var(--color-border);
+  padding-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.rule-meta-title {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.rule-logic-code {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  padding: 0.5rem;
+  border-radius: var(--radius-sm);
+  overflow-x: auto;
+  color: var(--color-text-primary);
+}
+
+/* Card footer/switch */
+.rule-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--color-border);
+  padding-top: 1rem;
+  margin-top: auto;
+}
+
+.rule-status-label {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.status-active-text {
+  color: var(--color-accent);
+}
+
+.status-inactive-text {
+  color: var(--color-text-muted);
+}
+
+/* Custom switch element */
+.switch-control {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 22px;
+}
+
+.switch-control input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  transition: .3s;
+  border-radius: 34px;
+}
+
+.switch-slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: var(--color-text-secondary);
+  transition: .3s;
+  border-radius: 50%;
+}
+
+input:checked + .switch-slider {
+  background-color: rgba(0, 255, 157, 0.15);
+  border-color: var(--color-accent);
+}
+
+input:checked + .switch-slider:before {
+  transform: translateX(22px);
+  background-color: var(--color-accent);
+}
+
+/* ── Sync error banner ───────────────────────────────────────────────────── */
+.rules-sync-error {
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: var(--color-warning);
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+/* ── Saving status text ──────────────────────────────────────────────────── */
+.status-saving-text {
+  color: var(--color-warning);
+  animation: pulse-opacity 0.8s ease-in-out infinite;
+}
+
+@keyframes pulse-opacity {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* ── Skeleton loading cards ──────────────────────────────────────────────── */
+.rule-card-skeleton {
+  min-height: 220px;
+  gap: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.skeleton-line {
+  height: 14px;
+  border-radius: 6px;
+  background: linear-gradient(
+    90deg,
+    var(--color-bg-secondary) 25%,
+    var(--color-border) 50%,
+    var(--color-bg-secondary) 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.4s ease-in-out infinite;
+}
+
+.skeleton-short  { width: 35%; }
+.skeleton-medium { width: 60%; }
+.skeleton-long   { width: 90%; }
+
+@keyframes skeleton-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}

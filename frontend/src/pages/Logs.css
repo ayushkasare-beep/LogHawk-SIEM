@@ -1,0 +1,122 @@
+/* ====================================
+   LogHawk – Logs Page Styles
+   ==================================== */
+
+.logs-page {
+  padding: 1.5rem 2rem;
+  max-width: 1400px;
+  animation: fadeIn 0.4s ease;
+}
+
+/* ---- Page Header ---- */
+.logs-page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1.75rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.logs-page-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.logs-page-subtitle {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.logs-header-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.875rem;
+  border-radius: var(--radius-full);
+  background: rgba(0, 255, 157, 0.08);
+  border: 1px solid rgba(0, 255, 157, 0.2);
+  color: var(--color-accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  align-self: flex-start;
+}
+
+/* ---- Stats Row ---- */
+.log-stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.log-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+}
+
+.log-stat-icon {
+  font-size: 1.75rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.log-stat-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+.log-stat-label {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin-top: 0.25rem;
+  font-weight: 500;
+}
+
+/* ---- Shared section-title across all child components ---- */
+.section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.section-icon {
+  font-size: 1.125rem;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+  .log-stats-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .logs-page {
+    padding: 1rem;
+  }
+
+  .log-stats-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+
+  .log-stat-card {
+    padding: 1rem;
+  }
+
+  .log-stat-value {
+    font-size: 1.25rem;
+  }
+}
